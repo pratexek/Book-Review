@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Review Haven</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Book Review Haven</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="reviews.html">Book Reviews</a>
+            <a href="genres.html">Genres</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Search for a Book</h2>
+        <input type="text" id="search-input" placeholder="Search books..." onkeyup="searchBooks()">
+    </section>
+
+    <section class="section" id="reviews-section">
+        <h2>Featured Book Reviews</h2>
+
+        <div class="review-card" onclick="toggleZoom(this)">
+            <h3>The Book Thief</h3>
+            <p><strong>Author:</strong> Markus Zusak</p>
+            <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐</p>
+            <p>A powerful story narrated by Death, set in Nazi Germany, about a girl who steals books.</p>
+        </div>
+        <div class="review-card" onclick="toggleZoom(this)">
+            <h3>All the Light We Cannot See</h3>
+            <p><strong>Author:</strong> Anthony Doerr</p>
+            <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐</p>
+            <p>A beautifully woven tale of a blind French girl and a German boy during WWII.</p>
+        </div>
+        <div class="review-card" onclick="toggleZoom(this)">
+            <h3>1984</h3>
+            <p><strong>Author:</strong> George Orwell</p>
+            <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐</p>
+            <p>A dystopian novel that delves into totalitarianism and surveillance.</p>
+        </div>
+        <div class="review-card" onclick="toggleZoom(this)">
+            <h3>Pride and Prejudice</h3>
+            <p><strong>Author:</strong> Jane Austen</p>
+            <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐</p>
+            <p>A classic romance that explores issues of class and social standing.</p>
+        </div>
+        <div class="review-card" onclick="toggleZoom(this)">
+            <h3>The Great Gatsby</h3>
+            <p><strong>Author:</strong> F. Scott Fitzgerald</p>
+            <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐</p>
+            <p>A story of love and ambition set in the Roaring Twenties.</p>
+        </div>
+        <!-- Add more review cards as needed -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Book Review Haven. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function searchBooks() {
+            const input = document.getElementById('search-input').value.toLowerCase();
+            const reviewCards = document.querySelectorAll('.review-card');
+
+            reviewCards.forEach(card => {
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                if (title.includes(input)) {
+                    card.style.display = 'block'; // Show matching book
+                } else {
+                    card.style.display = 'none'; // Hide non-matching book
+                }
+            });
+        }
+
+        // Function to zoom the review card on click
+        function toggleZoom(card) {
+            // Remove zoom class from all cards
+            const reviewCards = document.querySelectorAll('.review-card');
+            reviewCards.forEach(item => item.classList.remove('zoom'));
+
+            // Add zoom class to the clicked card
+            card.classList.toggle('zoom');
+        }
+
+        // Attach click event listener to each review card
+        document.querySelectorAll('.review-card').forEach(card => {
+            card.addEventListener('click', () => toggleZoom(card));
+        });
+    </script>
+</body>
+</html>

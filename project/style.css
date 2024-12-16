@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+nav a:hover {
+    background-color: #e8491d;
+    border-radius: 5px;
+}
+
+section {
+    padding: 20px;
+    margin: 10px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #35424a;
+}
+
+#search-input {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    border: 2px solid #35424a;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 1em;
+}
+
+#search-input:focus {
+    border-color: #e8491d;
+    outline: none;
+}
+
+.section {
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.review-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.review-card:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.review-card h3 {
+    margin: 0;
+    color: #35424a;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #35424a;
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+.genre-button {
+    display: inline-block;
+    background-color: #35424a;
+    color: white;
+    padding: 15px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.genre-button:hover {
+    background-color: #e8491d;
+    transform: scale(1.05);
+}
+.review-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+.review-card:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.review-card.zoom {
+    transform: scale(1.1); /* Zoom effect */
+    z-index: 1; /* Ensure the zoomed card is above others */
+}
